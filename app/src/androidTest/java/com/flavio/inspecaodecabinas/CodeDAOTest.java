@@ -5,7 +5,7 @@ import android.content.Context;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
 
-import com.flavio.inspecaodecabinas.dao.DAO;
+import com.flavio.inspecaodecabinas.dao.CodeDAO;
 import com.flavio.inspecaodecabinas.modelo.Pais;
 
 import org.junit.After;
@@ -19,16 +19,16 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(AndroidJUnit4.class)
-public class DAOTest {
+public class CodeDAOTest {
 	private int idCodeDD5 = 179;
-	private DAO dao;
+	private CodeDAO dao;
 	private ArrayList<Integer> codesNasRegras;
 	private ArrayList<Integer> ocorrenciasDeRegras;
 
 	@Before
 	public void antes() {
 		Context contexto = InstrumentationRegistry.getInstrumentation().getTargetContext();
-		dao = new DAO(contexto);
+		dao = new CodeDAO(contexto);
 		int[] codes = new int[2];
 		int idCodeFL4 = 310;
 		codes[0] = idCodeFL4;
@@ -61,24 +61,4 @@ public class DAOTest {
 
 		assertTrue(codesNasRegras.containsAll(ocorrenciasDeRegras));
 	}
-
-	@Test
-	public void deveInicializarIdDePaisBrasil() {
-		Pais pais = new Pais();
-		pais.setCodigo("BRA");
-		pais = dao.bucaPais(pais);
-		int idEsperado = 218;
-		assertEquals(idEsperado, pais.getId());
-	}
-
-//	@Test
-//	public void devePersistirCabinaComSucesso(){
-//		Pais pais = new Pais();
-//		Baumuster baumuster = new Baumuster();
-//		Serie serie = new Serie();
-//		List<Code> codes = new ArrayList<>();
-//		Cabina cabina = new Cabina();
-//
-//
-//	}
 }

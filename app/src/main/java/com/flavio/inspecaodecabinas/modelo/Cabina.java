@@ -3,7 +3,7 @@ package com.flavio.inspecaodecabinas.modelo;
 import java.util.List;
 
 /**
- * Criado por...
+ * Representa uma cabina.
  *
  * @author Flávio Aparecido Ribeiro
  * @version 1.0
