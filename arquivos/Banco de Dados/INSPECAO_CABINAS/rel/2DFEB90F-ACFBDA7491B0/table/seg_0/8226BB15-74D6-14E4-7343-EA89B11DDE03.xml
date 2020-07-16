@@ -1,0 +1,150 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8226BB15-74D6-14E4-7343-EA89B11DDE03" name="cabina">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 16:10:59 UTC</createdTime>
+<generatorID>E1572CD3-C07C-3A2E-8558-6353B9A3F0CD</generatorID>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="7BDC768A-E508-E968-D62C-C8FC7E8C3EEE">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 16:10:59 UTC</createdTime>
+<generatorID>1D813D1D-36FF-1FDE-77B7-B89A95F98B06</generatorID>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sequencia" id="B6555529-46B1-4A3C-6B79-34A406B76643">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-15 21:44:56 UTC</createdTime>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>6,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="np" id="EBA95A56-A22B-C806-5CD9-A81F5665979A">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 16:10:59 UTC</createdTime>
+<generatorID>686AF6B8-B00F-D396-31B9-9E634D88F510</generatorID>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fz" id="864EFB40-7353-8B9F-810A-2CDD6B11F2AF">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 16:10:59 UTC</createdTime>
+<generatorID>B4E4223F-DF2F-EC7C-1BEF-83FEAE36CB0A</generatorID>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>6,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pais_id" id="85CC6808-C65F-90EC-2BD0-DBF4A380254B">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 16:10:59 UTC</createdTime>
+<generatorID>0CDF74F3-66B5-8D56-51FB-AA3511F057B5</generatorID>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5A4E9880-1855-2D6D-3194-0DB7AA65AAD4" referredColumn="629514C7-3AE0-0529-93A7-99BB5513189D"/>
+</associations>
+</Column>
+<Column name="serie_id" id="5AD38997-5985-F3A3-829B-F4785A6654A3">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 16:10:59 UTC</createdTime>
+<generatorID>222F78C0-272B-EC6F-576A-92CCF154A8D7</generatorID>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B97AFD38-8648-642F-2D30-DA4AC3888C98" referredColumn="97FB031E-3C10-BF7B-FF00-190669DD0DD4"/>
+</associations>
+</Column>
+<Column name="baumuster_id" id="D1C6607D-6DA2-EEB8-C8EE-2E65550E1315">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 16:10:59 UTC</createdTime>
+<generatorID>C4AFBEC6-6965-9E7E-0ACC-58ACC8494A61</generatorID>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="459C1636-D925-E35B-BEFF-0E9A8BAB7CE1" referredColumn="1429DD3F-D5DA-82E5-A4B5-D8238E8F6C34"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B77535D9-ED75-D99F-1D27-4130FFA19788" name="cabina_PK">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 16:10:59 UTC</createdTime>
+<generatorID>CEC7E82F-B6B6-5236-89C9-3EDAFDF94412</generatorID>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7BDC768A-E508-E968-D62C-C8FC7E8C3EEE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0537A812-8EB4-BBA1-3D4A-B8DEE6A7F649" name="cabina_pais_FK">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 16:10:59 UTC</createdTime>
+<generatorID>E9FDAFA2-47B9-DFDC-0D44-F21BC7DEE16E</generatorID>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="85CC6808-C65F-90EC-2BD0-DBF4A380254B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6F3C9AA2-54F8-6AE5-1841-3B4CA1908BCD" name="cabina_serie_FK">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 16:10:59 UTC</createdTime>
+<generatorID>700F0E46-5670-4102-7C6C-B9856484855C</generatorID>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5AD38997-5985-F3A3-829B-F4785A6654A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E6E1EF80-BD10-E680-70ED-1E7CC2E61728" name="cabina_baumuster_FK">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 16:10:59 UTC</createdTime>
+<generatorID>B60D084C-021E-B062-0F77-EF0497EC7A93</generatorID>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1C6607D-6DA2-EEB8-C8EE-2E65550E1315"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

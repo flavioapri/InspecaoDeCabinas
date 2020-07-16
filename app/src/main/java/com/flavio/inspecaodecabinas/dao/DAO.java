@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.flavio.inspecaodecabinas.modelo.Pais;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 import java.util.ArrayList;
@@ -33,5 +34,10 @@ public class DAO extends SQLiteAssetHelper {
             c.close();
         }
         return ocorrenciasRegrasCode;
+    }
+
+    public Pais bucaPais(Pais pais) {
+
+        return null;
     }
 }

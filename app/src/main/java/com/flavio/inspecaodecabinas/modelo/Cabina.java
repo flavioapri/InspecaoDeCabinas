@@ -10,28 +10,13 @@ import java.util.List;
  */
 public class Cabina {
 	private int id;
+	private String sequencia;
 	private String np;
 	private String fz;
 	private Pais pais;
 	private Serie serie;
 	private Baumuster baumuster;
 	private List<Code> codes;
-	private boolean inspecionada;
-
-	public Cabina() {
-	}
-
-	public Cabina(int id, String np, String fz, Pais pais, Serie serie, Baumuster baumuster, List<Code> codes,
-				  boolean inspecionada) {
-		this.id = id;
-		this.np = np;
-		this.fz = fz;
-		this.pais = pais;
-		this.serie = serie;
-		this.baumuster = baumuster;
-		this.codes = codes;
-		this.inspecionada = inspecionada;
-	}
 
 	public int getId() {
 		return id;
@@ -39,6 +24,14 @@ public class Cabina {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getSequencia() {
+		return sequencia;
+	}
+
+	public void setSequencia(String sequencia) {
+		this.sequencia = sequencia;
 	}
 
 	public String getNp() {
@@ -87,13 +80,5 @@ public class Cabina {
 
 	public void setCodes(List<Code> codes) {
 		this.codes = codes;
-	}
-
-	public boolean isInspecionada() {
-		return inspecionada;
-	}
-
-	public void setInspecionada(boolean inspecionada) {
-		this.inspecionada = inspecionada;
 	}
 }

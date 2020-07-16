@@ -12,16 +12,6 @@ public class Code {
 	private String denominacao;
 	private String descricao;
 
-	public Code() {
-	}
-
-	public Code(int id, String codigo, String denominacao, String descricao) {
-		this.id = id;
-		this.codigo = codigo;
-		this.denominacao = denominacao;
-		this.descricao = descricao;
-	}
-
 	public int getId() {
 		return id;
 	}

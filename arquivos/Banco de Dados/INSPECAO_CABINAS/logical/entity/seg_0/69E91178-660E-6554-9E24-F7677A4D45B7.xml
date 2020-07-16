@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="69E91178-660E-6554-9E24-F7677A4D45B7" name="serie">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-06 22:48:01 UTC</createdTime>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<engineerTo>
+<item key="2DFEB90F-D276-976C-3B4F-ACFBDA7491B0" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="246F2346-4B39-79CF-0AF5-011B773252A9">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 12:15:56 UTC</createdTime>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<engineerTo>
+<item key="2DFEB90F-D276-976C-3B4F-ACFBDA7491B0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numero" id="B948AF8A-A0F8-9581-F4AD-54AFCD62AED4">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-06 22:48:38 UTC</createdTime>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<engineerTo>
+<item key="2DFEB90F-D276-976C-3B4F-ACFBDA7491B0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="baumuster_id" id="CA84124A-3215-9C0F-AFDB-863E675A4A3C">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-07 12:20:39 UTC</createdTime>
+<generatorID>CEE5EBD4-0A5B-3DA6-1D62-413B2204EF47</generatorID>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<engineerTo>
+<item key="2DFEB90F-D276-976C-3B4F-ACFBDA7491B0" value="true"/>
+</engineerTo>
+<referedAttribute>EE7F5279-00FD-D869-56FB-CFFDF8ADCD2E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E9C9AE33-0F11-7F38-144D-1D38CF854822" name="serie PK">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-06 22:48:32 UTC</createdTime>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<engineerTo>
+<item key="2DFEB90F-D276-976C-3B4F-ACFBDA7491B0" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>246F2346-4B39-79CF-0AF5-011B773252A9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

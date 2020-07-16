@@ -1,10 +1,12 @@
 package com.flavio.inspecaodecabinas.logica;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import android.content.Context;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Realiza a leitura do arquivo de texto que deve conter a lista do PRM e grava em um array para
@@ -20,22 +22,22 @@ public class LeitorDeLista {
 	 * @return lista com cada linha como string
 	 * @since 1.0
 	 */
-	public static List<String> lerLista() {
+	//TODO Fazer com que o caminho e o nome do arquivo venham de acordo com a posterior seleção em algum campo.
+	public List<String> lerLista(String caminho, Context contexto) {
+		/* Lista criada com capacidade inicial 300 por questões de performance. É mais custoso o array ter de ficar se
+		   redimensionando. Este valor é a média aproximada de cabinas sequênciadas.*/
 		List<String> lista = new ArrayList<>(300);
 		try {
-			//TODO Fazer com que o caminho e o nome do arquivo venham automáticamente de acordo com a posterior seleção em algum
-			// campo
-			File arquivo = new File("lista_prm_teste.txt");
-			Scanner scanner = new Scanner(arquivo);
-			while (scanner.hasNextLine()) {
-				String linha = scanner.nextLine();
+			InputStreamReader input = new InputStreamReader(contexto.getAssets().open(caminho));
+			BufferedReader leitor = new BufferedReader(input);
+
+			String linha;
+			while ((linha = leitor.readLine()) != null) {
 				lista.add(linha);
 			}
-			scanner.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("Um erro ocorreu na leitura do arquivo.");
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return lista;
 	}
 }

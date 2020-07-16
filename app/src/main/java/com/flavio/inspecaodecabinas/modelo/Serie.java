@@ -8,17 +8,8 @@ package com.flavio.inspecaodecabinas.modelo;
  */
 public class Serie {
 	private int id;
-	private String serie;
+	private String numero;
 	private Baumuster baumuster;
-
-	public Serie() {
-	}
-
-	public Serie(int id, String serie, Baumuster baumuster) {
-		this.id = id;
-		this.serie = serie;
-		this.baumuster = baumuster;
-	}
 
 	public int getId() {
 		return id;
@@ -28,12 +19,12 @@ public class Serie {
 		this.id = id;
 	}
 
-	public String getSerie() {
-		return serie;
+	public String getNumero() {
+		return numero;
 	}
 
-	public void setSerie(String serie) {
-		this.serie = serie;
+	public void setNumero(String numero) {
+		this.numero = numero;
 	}
 
 	public Baumuster getBaumuster() {
