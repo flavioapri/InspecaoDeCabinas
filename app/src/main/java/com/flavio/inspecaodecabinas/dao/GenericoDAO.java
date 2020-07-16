@@ -17,7 +17,6 @@ import java.util.ArrayList;
  */
 public class GenericoDAO extends SQLiteAssetHelper {
 	// TODO Modificar herança para SQLiteOpenHelper quando aplicativo for a produção
-	private int id;
 	private static final String NOME_BANCO_DADOS = "INSPECAO_CABINAS.db";
 	private static final int VERSAO_BANCO_DADOS = 1;
 

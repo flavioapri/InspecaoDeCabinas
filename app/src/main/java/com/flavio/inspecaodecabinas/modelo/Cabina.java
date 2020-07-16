@@ -8,8 +8,7 @@ import java.util.List;
  * @author Flávio Aparecido Ribeiro
  * @version 1.0
  */
-public class Cabina {
-	private int id;
+public class Cabina extends EntidadeBase {
 	private String sequencia;
 	private String np;
 	private String fz;
@@ -17,14 +16,6 @@ public class Cabina {
 	private Serie serie;
 	private Baumuster baumuster;
 	private List<Code> codes;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getSequencia() {
 		return sequencia;

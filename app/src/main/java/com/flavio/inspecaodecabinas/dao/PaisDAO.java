@@ -17,7 +17,7 @@ public class PaisDAO extends GenericoDAO {
 		super(contexto);
 	}
 
-	public Pais bucaPais(Pais pais) {
+	public Pais bucaPaisPorCodigo(Pais pais) {
 		String codigo = pais.getCodigo();
 		String pesquisa = "SELECT * FROM pais WHERE codigo = ?";
 		SQLiteDatabase db = getReadableDatabase();

@@ -4,27 +4,9 @@ package com.flavio.inspecaodecabinas.modelo;
  * @author Flávio Aparecido Ribeiro
  * @version 1.0
  */
-public class Pais {
-	private int id;
+public class Pais extends EntidadeBase {
 	private String codigo;
 	private String nome;
-
-	public Pais() {
-	}
-
-	public Pais(int id, String codigo, String nome) {
-		this.id = id;
-		this.codigo = codigo;
-		this.nome = nome;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getCodigo() {
 		return codigo;

@@ -1,24 +1,15 @@
 package com.flavio.inspecaodecabinas.modelo;
 
 /**
- * Criado por...
+ * Representa um objeto do tipo <b>Code</b>
  *
  * @author Flávio Aparecido Ribeiro
  * @version 1.0
  */
-public class Code {
-	private int id;
+public class Code extends EntidadeBase {
 	private String codigo;
 	private String denominacao;
 	private String descricao;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getCodigo() {
 		return codigo;

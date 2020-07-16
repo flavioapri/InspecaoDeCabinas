@@ -6,18 +6,9 @@ package com.flavio.inspecaodecabinas.modelo;
  * @author Flávio Aparecido Ribeiro
  * @version 1.0
  */
-public class Serie {
-	private int id;
+public class Serie extends EntidadeBase {
 	private String numero;
 	private Baumuster baumuster;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getNumero() {
 		return numero;

@@ -28,7 +28,7 @@ public class PaisDAOTest {
 	public void paisDeveConterId128CodigoBRAENomeBrasil() {
 		Pais pais = new Pais();
 		pais.setCodigo("BRA");
-		pais = dao.bucaPais(pais);
+		pais = dao.bucaPaisPorCodigo(pais);
 		int idEsperado = 218;
 		String codigoEsperado = "BRA";
 		String nomeEsperado = "Brasil";
