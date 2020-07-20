@@ -5,8 +5,8 @@ import android.content.Context;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
 
-import com.flavio.inspecaodecabinas.dao.PaisDAO;
-import com.flavio.inspecaodecabinas.modelo.Pais;
+import com.flavio.inspecaodecabinas.dao.BaumusterDAO;
+import com.flavio.inspecaodecabinas.modelo.Baumuster;
 
 import org.junit.After;
 import org.junit.Before;
@@ -16,13 +16,13 @@ import org.junit.runner.RunWith;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(AndroidJUnit4.class)
-public class PaisDAOTest {
-	private PaisDAO dao;
+public class BaumusterDAOTest {
+	private BaumusterDAO dao;
 
 	@Before
 	public void antes() {
 		Context contexto = InstrumentationRegistry.getInstrumentation().getTargetContext();
-		dao = new PaisDAO(contexto);
+		dao = new BaumusterDAO(contexto);
 	}
 
 	@After
@@ -31,10 +31,10 @@ public class PaisDAOTest {
 	}
 
 	@Test
-	public void paisDeveConterId218CodigoBRAENomeBrasil() {
-		Pais pais = dao.bucaPais("BRA");
-		assertEquals(218, pais.getId());
-		assertEquals("BRA", pais.getCodigo());
-		assertEquals("Brasil", pais.getNome());
+	public void baumusterDeveConterId3CodigoD958880ModeloAxorC() {
+		Baumuster baumuster = dao.buscaBaumuster("D 958.880");
+		assertEquals(3, baumuster.getId());
+		assertEquals("D 958.880", baumuster.getCodigo());
+		assertEquals("Axor C", baumuster.getModelo());
 	}
 }

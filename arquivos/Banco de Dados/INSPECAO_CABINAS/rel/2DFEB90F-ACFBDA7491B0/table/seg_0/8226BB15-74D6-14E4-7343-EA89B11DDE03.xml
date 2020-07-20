@@ -84,21 +84,6 @@
 <colAssociation fkAssociation="B97AFD38-8648-642F-2D30-DA4AC3888C98" referredColumn="97FB031E-3C10-BF7B-FF00-190669DD0DD4"/>
 </associations>
 </Column>
-<Column name="baumuster_id" id="D1C6607D-6DA2-EEB8-C8EE-2E65550E1315">
-<createdBy>djafl</createdBy>
-<createdTime>2020-07-07 16:10:59 UTC</createdTime>
-<generatorID>C4AFBEC6-6965-9E7E-0ACC-58ACC8494A61</generatorID>
-<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="459C1636-D925-E35B-BEFF-0E9A8BAB7CE1" referredColumn="1429DD3F-D5DA-82E5-A4B5-D8238E8F6C34"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="B77535D9-ED75-D99F-1D27-4130FFA19788" name="cabina_PK">
@@ -133,17 +118,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="5AD38997-5985-F3A3-829B-F4785A6654A3"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="E6E1EF80-BD10-E680-70ED-1E7CC2E61728" name="cabina_baumuster_FK">
-<createdBy>djafl</createdBy>
-<createdTime>2020-07-07 16:10:59 UTC</createdTime>
-<generatorID>B60D084C-021E-B062-0F77-EF0497EC7A93</generatorID>
-<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="D1C6607D-6DA2-EEB8-C8EE-2E65550E1315"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="INSPECAO_CABINAS" id="E147CC30-C46B-A2D0-CFEF-24190BB8B2C8" version="3.5">
+<createdBy>djafl</createdBy>
+<createdTime>2020-07-06 22:36:33 UTC</createdTime>
+<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>E147CC30-C46B-A2D0-CFEF-24190BB8B2C8</designId>
+</OSDM_Design>

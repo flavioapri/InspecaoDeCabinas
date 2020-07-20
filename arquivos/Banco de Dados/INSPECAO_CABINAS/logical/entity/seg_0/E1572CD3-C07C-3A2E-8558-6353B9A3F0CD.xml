@@ -94,20 +94,6 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="baumuster_id" id="C4AFBEC6-6965-9E7E-0ACC-58ACC8494A61">
-<createdBy>djafl</createdBy>
-<createdTime>2020-07-07 13:38:33 UTC</createdTime>
-<generatorID>B60D084C-021E-B062-0F77-EF0497EC7A93</generatorID>
-<ownerDesignName>INSPECAO_CABINAS</ownerDesignName>
-<engineerTo>
-<item key="2DFEB90F-D276-976C-3B4F-ACFBDA7491B0" value="true"/>
-</engineerTo>
-<referedAttribute>EE7F5279-00FD-D869-56FB-CFFDF8ADCD2E</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="CEC7E82F-B6B6-5236-89C9-3EDAFDF94412" name="Cabina PK">

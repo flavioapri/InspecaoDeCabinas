@@ -7,8 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import com.flavio.inspecaodecabinas.modelo.Pais;
 
 /**
- * DAO para iteração com objeto do tipo Pais.
- *
  * @author Flávio Aparecido Ribeiro
  * @version 1.0
  */
@@ -17,8 +15,14 @@ public class PaisDAO extends GenericoDAO {
 		super(contexto);
 	}
 
-	public Pais bucaPaisPorCodigo(Pais pais) {
-		String codigo = pais.getCodigo();
+	/**
+	 * Busca uma <b>Pais</b> através do seu número.
+	 *
+	 * @param codigo número do pais contido na linha de texto com informações da cabina
+	 * @return <b>Pais</b> com seus devidos campos preenchidos
+	 */
+	public Pais bucaPais(String codigo) {
+		Pais pais = new Pais();
 		String pesquisa = "SELECT * FROM pais WHERE codigo = ?";
 		SQLiteDatabase db = getReadableDatabase();
 		Cursor c = db.rawQuery(pesquisa, new String[]{codigo});

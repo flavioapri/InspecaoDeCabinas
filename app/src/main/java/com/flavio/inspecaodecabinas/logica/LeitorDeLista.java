@@ -22,6 +22,8 @@ public class LeitorDeLista {
 	 * @return lista com cada linha como string
 	 * @since 1.0
 	 */
+	//TODO Tratar possíveis exceções
+	//TODO Criar validador de lista
 	//TODO Fazer com que o caminho e o nome do arquivo venham de acordo com a posterior seleção em algum campo.
 	public List<String> lerLista(String caminho, Context contexto) {
 		/* Lista criada com capacidade inicial 300 por questões de performance. É mais custoso o array ter de ficar se

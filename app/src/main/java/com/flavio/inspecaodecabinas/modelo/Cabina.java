@@ -14,7 +14,6 @@ public class Cabina extends EntidadeBase {
 	private String fz;
 	private Pais pais;
 	private Serie serie;
-	private Baumuster baumuster;
 	private List<Code> codes;
 
 	public String getSequencia() {
@@ -55,14 +54,6 @@ public class Cabina extends EntidadeBase {
 
 	public void setSerie(Serie serie) {
 		this.serie = serie;
-	}
-
-	public Baumuster getBaumuster() {
-		return baumuster;
-	}
-
-	public void setBaumuster(Baumuster baumuster) {
-		this.baumuster = baumuster;
 	}
 
 	public List<Code> getCodes() {

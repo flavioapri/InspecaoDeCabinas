@@ -1,8 +1,11 @@
 package com.flavio.inspecaodecabinas;
 
-import androidx.test.ext.junit.runners.AndroidJUnit4;
+import android.content.Context;
 
-import com.flavio.inspecaodecabinas.helper.CabinaHelper;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
+
+import com.flavio.inspecaodecabinas.logica.GeradorDeCabina;
 import com.flavio.inspecaodecabinas.modelo.Cabina;
 
 import org.junit.Before;
@@ -12,14 +15,16 @@ import org.junit.runner.RunWith;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(AndroidJUnit4.class)
-public class CabinaHelperTest {
+public class GeradorDeCabinaTest {
 	private Cabina cabina;
+	Context contexto;
 
 	@Before
 	public void antes() {
+		contexto = InstrumentationRegistry.getInstrumentation().getTargetContext();
 		String linha = "82585 40.244739/3 579007 BRA D 958.880 AXOR 2644 6X4 E5 INDD5 INF04 INHK1 INFL4";
-		CabinaHelper helper = new CabinaHelper();
-		cabina = helper.gerarCabina(linha);
+		GeradorDeCabina helper = new GeradorDeCabina();
+		cabina = helper.gerarCabina(linha, contexto);
 	}
 
 	@Test
@@ -54,21 +59,21 @@ public class CabinaHelperTest {
 	}
 
 	@Test
-	public void baumusterDeveCorresponderAoValorEsperado() {
-		String valorEsperado = "D 958.880";
-		assertEquals(valorEsperado, cabina.getBaumuster().getCodigo());
+	public void serieDeveConterId56Numero2644() {
+		String numero = "2644";
+		int id = 56;
+		assertEquals(numero, cabina.getSerie().getNumero());
+		assertEquals(id, cabina.getSerie().getId());
 	}
 
 	@Test
-	public void serieDeveCorresponderAoValorEsperado() {
-		String valorEsperado = "2644";
-		assertEquals(valorEsperado, cabina.getSerie().getNumero());
-	}
-
-	@Test
-	public void paisDeveCorresponderABrasil() {
-		String pais = "BRA";
-		assertEquals(pais, cabina.getPais().getCodigo());
+	public void paisDeveSerId218CodigoBRANomeBrasil() {
+		int id = 218;
+		String codigo = "BRA";
+		String nome = "Brasil";
+		assertEquals(id, cabina.getPais().getId());
+		assertEquals(codigo, cabina.getPais().getCodigo());
+		assertEquals(nome, cabina.getPais().getNome());
 	}
 
 	@Test
