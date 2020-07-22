@@ -24,9 +24,8 @@ public class LeitorDeListaTest {
 	@Before
 	public void antes() {
 		Context contexto = InstrumentationRegistry.getInstrumentation().getTargetContext();
-		LeitorDeLista leitor = new LeitorDeLista();
 		String caminho = "files/lista_prm_testes.txt";
-		lista = leitor.lerLista(caminho, contexto);
+		lista = LeitorDeLista.lerLista(caminho, contexto);
 	}
 
 	@Test

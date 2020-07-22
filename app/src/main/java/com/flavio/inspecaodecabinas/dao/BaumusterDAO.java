@@ -34,4 +34,24 @@ public class BaumusterDAO extends GenericoDAO {
 		c.close();
 		return baumuster;
 	}
+
+	/**
+	 * Busca uma <b>Baumuster</b> através do seu ID no banco de dados.
+	 *
+	 * @param id id do baumuster no banco de dados
+	 * @return <b>Baumuster</b> com seus campos preenchidos
+	 */
+	public Baumuster buscaBaumuster(int id) {
+		Baumuster baumuster = new Baumuster();
+		String pesquisa = "SELECT * FROM baumuster WHERE id = " + id;
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor c = db.rawQuery(pesquisa, null);
+		c.moveToNext();
+		baumuster.setId(c.getInt(c.getColumnIndex("id")));
+		baumuster.setCodigo(c.getString(c.getColumnIndex("codigo")));
+		baumuster.setModelo(c.getString(c.getColumnIndex("modelo")));
+
+		c.close();
+		return baumuster;
+	}
 }

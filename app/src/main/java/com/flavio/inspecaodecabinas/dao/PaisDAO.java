@@ -21,11 +21,31 @@ public class PaisDAO extends GenericoDAO {
 	 * @param codigo número do pais contido na linha de texto com informações da cabina
 	 * @return <b>Pais</b> com seus devidos campos preenchidos
 	 */
-	public Pais bucaPais(String codigo) {
+	public Pais buscaPais(String codigo) {
 		Pais pais = new Pais();
 		String pesquisa = "SELECT * FROM pais WHERE codigo = ?";
 		SQLiteDatabase db = getReadableDatabase();
 		Cursor c = db.rawQuery(pesquisa, new String[]{codigo});
+		c.moveToNext();
+		pais.setId(c.getInt(c.getColumnIndex("id")));
+		pais.setCodigo(c.getString(c.getColumnIndex("codigo")));
+		pais.setNome(c.getString(c.getColumnIndex("nome")));
+
+		c.close();
+		return pais;
+	}
+
+	/**
+	 * Busca uma <b>Pais</b> através do seu ID no banco de dados.
+	 *
+	 * @param id id do pais
+	 * @return <b>Pais</b> com seus devidos campos preenchidos
+	 */
+	public Pais buscaPais(int id) {
+		Pais pais = new Pais();
+		String pesquisa = "SELECT * FROM pais WHERE id = " + id;
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor c = db.rawQuery(pesquisa, null);
 		c.moveToNext();
 		pais.setId(c.getInt(c.getColumnIndex("id")));
 		pais.setCodigo(c.getString(c.getColumnIndex("codigo")));

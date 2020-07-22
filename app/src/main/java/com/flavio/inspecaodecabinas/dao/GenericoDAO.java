@@ -1,13 +1,8 @@
 package com.flavio.inspecaodecabinas.dao;
 
 import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 
-import com.flavio.inspecaodecabinas.modelo.Pais;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
-
-import java.util.ArrayList;
 
 /**
  * DAO genérico para iteração com o banco de dados.
@@ -17,7 +12,8 @@ import java.util.ArrayList;
  */
 public class GenericoDAO extends SQLiteAssetHelper {
 	// TODO Modificar herança para SQLiteOpenHelper quando aplicativo for a produção
-	private static final String NOME_BANCO_DADOS = "INSPECAO_DE_CABINAS.db";
+	// TODO Alterar banco de dados na produção para "INSPECAO_CABINAS"
+	private static final String NOME_BANCO_DADOS = "banco1.db";
 	private static final int VERSAO_BANCO_DADOS = 1;
 
 	public GenericoDAO(Context contexto) {

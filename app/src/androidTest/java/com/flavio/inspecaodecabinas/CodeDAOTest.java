@@ -6,7 +6,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
 
 import com.flavio.inspecaodecabinas.dao.CodeDAO;
-import com.flavio.inspecaodecabinas.modelo.Pais;
+import com.flavio.inspecaodecabinas.modelo.Code;
 
 import org.junit.After;
 import org.junit.Before;
@@ -21,6 +21,7 @@ import static org.junit.Assert.assertTrue;
 @RunWith(AndroidJUnit4.class)
 public class CodeDAOTest {
 	private int idCodeDD5 = 179;
+	private int idCodeFP6 = 313;
 	private CodeDAO dao;
 	private ArrayList<Integer> codesNasRegras;
 	private ArrayList<Integer> ocorrenciasDeRegras;
@@ -41,6 +42,14 @@ public class CodeDAOTest {
 	@After
 	public void apos() {
 		dao.close();
+	}
+
+	@Test
+	public void deveTerId179CodigoINDD5DenomincacaoCABINACOMTETOALTO() {
+		Code code = dao.buscaCode("INDD5");
+		assertEquals(179, code.getId());
+		assertEquals("INDD5", code.getCodigo());
+		assertEquals("CABINA COM TETO ALTO", code.getDenominacao());
 	}
 
 	@Test

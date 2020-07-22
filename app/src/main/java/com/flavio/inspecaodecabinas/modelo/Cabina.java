@@ -9,18 +9,18 @@ import java.util.List;
  * @version 1.0
  */
 public class Cabina extends EntidadeBase {
-	private String sequencia;
+	private int sequencia;
 	private String np;
 	private String fz;
 	private Pais pais;
 	private Serie serie;
 	private List<Code> codes;
 
-	public String getSequencia() {
+	public int getSequencia() {
 		return sequencia;
 	}
 
-	public void setSequencia(String sequencia) {
+	public void setSequencia(int sequencia) {
 		this.sequencia = sequencia;
 	}
 

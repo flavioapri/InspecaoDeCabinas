@@ -22,10 +22,8 @@ public class LeitorDeLista {
 	 * @return lista com cada linha como string
 	 * @since 1.0
 	 */
-	//TODO Tratar possíveis exceções
-	//TODO Criar validador de lista
 	//TODO Fazer com que o caminho e o nome do arquivo venham de acordo com a posterior seleção em algum campo.
-	public List<String> lerLista(String caminho, Context contexto) {
+	public static List<String> lerLista(String caminho, Context contexto) {
 		/* Lista criada com capacidade inicial 300 por questões de performance. É mais custoso o array ter de ficar se
 		   redimensionando. Este valor é a média aproximada de cabinas sequênciadas.*/
 		List<String> lista = new ArrayList<>(300);
@@ -38,6 +36,7 @@ public class LeitorDeLista {
 				lista.add(linha);
 			}
 		} catch (IOException e) {
+			System.err.println("Erro ao ler arquivo. Certifique-se de que o arquivo é do tipo texto (.txt) e possuí conteúdo.");
 			e.printStackTrace();
 		}
 		return lista;

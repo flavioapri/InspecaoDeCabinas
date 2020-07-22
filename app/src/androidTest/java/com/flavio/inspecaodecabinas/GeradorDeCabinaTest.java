@@ -17,19 +17,18 @@ import static org.junit.Assert.assertEquals;
 @RunWith(AndroidJUnit4.class)
 public class GeradorDeCabinaTest {
 	private Cabina cabina;
-	Context contexto;
+	private Context contexto;
 
 	@Before
 	public void antes() {
 		contexto = InstrumentationRegistry.getInstrumentation().getTargetContext();
-		String linha = "82585 40.244739/3 579007 BRA D 958.880 AXOR 2644 6X4 E5 INDD5 INF04 INHK1 INFL4";
-		GeradorDeCabina helper = new GeradorDeCabina();
-		cabina = helper.gerarCabina(linha, contexto);
+		String linha = "82585 40.244739/3 579007 BRA AXOR 2644 6X4 E5 INDD5 INF04 INHK1 INFL4";
+		cabina = GeradorDeCabina.gerarCabina(linha, contexto);
 	}
 
 	@Test
 	public void sequenciaDeveEstarDeAcordoComStringEsperada() {
-		String sequenciaEsperada = "82585";
+		int sequenciaEsperada = 82585;
 		assertEquals(sequenciaEsperada, cabina.getSequencia());
 	}
 
@@ -52,10 +51,21 @@ public class GeradorDeCabinaTest {
 		String valor3 = "INHK1";
 		String valor4 = "INFL4";
 
+		assertEquals(179, cabina.getCodes().get(0).getId());
 		assertEquals(valor1, cabina.getCodes().get(0).getCodigo());
+		assertEquals("CABINA COM TETO ALTO", cabina.getCodes().get(0).getDenominacao());
+
+		assertEquals(333, cabina.getCodes().get(1).getId());
 		assertEquals(valor2, cabina.getCodes().get(1).getCodigo());
+		assertEquals("CABINA LEITO", cabina.getCodes().get(1).getDenominacao());
+
+		assertEquals(450, cabina.getCodes().get(2).getId());
 		assertEquals(valor3, cabina.getCodes().get(2).getCodigo());
+		assertEquals("CLIMATIZADOR", cabina.getCodes().get(2).getDenominacao());
+
+		assertEquals(310, cabina.getCodes().get(3).getId());
 		assertEquals(valor4, cabina.getCodes().get(3).getCodigo());
+		assertEquals("APOIO DA CABINA", cabina.getCodes().get(3).getDenominacao());
 	}
 
 	@Test

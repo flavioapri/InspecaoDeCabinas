@@ -37,4 +37,12 @@ public class BaumusterDAOTest {
 		assertEquals("D 958.880", baumuster.getCodigo());
 		assertEquals("Axor C", baumuster.getModelo());
 	}
+
+	@Test
+	public void baumusterDeveConterId5CodigoD960840ModeloActros() {
+		Baumuster baumuster = dao.buscaBaumuster(5);
+		assertEquals(5, baumuster.getId());
+		assertEquals("D 960.840", baumuster.getCodigo());
+		assertEquals("Actros", baumuster.getModelo());
+	}
 }

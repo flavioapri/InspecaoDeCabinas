@@ -32,7 +32,15 @@ public class PaisDAOTest {
 
 	@Test
 	public void paisDeveConterId218CodigoBRAENomeBrasil() {
-		Pais pais = dao.bucaPais("BRA");
+		Pais pais = dao.buscaPais("BRA");
+		assertEquals(218, pais.getId());
+		assertEquals("BRA", pais.getCodigo());
+		assertEquals("Brasil", pais.getNome());
+	}
+
+	@Test
+	public void paisBuscaPorIDConterId218CodigoBRAENomeBrasil() {
+		Pais pais = dao.buscaPais(218);
 		assertEquals(218, pais.getId());
 		assertEquals("BRA", pais.getCodigo());
 		assertEquals("Brasil", pais.getNome());

@@ -33,8 +33,8 @@ public class SerieDAOTest {
 
 	@Test
 	public void serieDeveConterId19Numero2653() {
-		Serie serie = dao.buscaSerie("2653");
+		Serie serie = dao.buscaSerie(19);
 		assertEquals(19, serie.getId());
-		assertEquals("2653", serie.getNumero());
+		assertEquals(5, serie.getBaumuster().getId());
 	}
 }

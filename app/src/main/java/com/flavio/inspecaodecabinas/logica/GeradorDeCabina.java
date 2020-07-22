@@ -3,6 +3,7 @@ package com.flavio.inspecaodecabinas.logica;
 import android.content.Context;
 
 import com.flavio.inspecaodecabinas.dao.BaumusterDAO;
+import com.flavio.inspecaodecabinas.dao.CodeDAO;
 import com.flavio.inspecaodecabinas.dao.PaisDAO;
 import com.flavio.inspecaodecabinas.dao.SerieDAO;
 import com.flavio.inspecaodecabinas.modelo.Cabina;
@@ -26,12 +27,7 @@ public class GeradorDeCabina {
 	private static final int POSICAO_NP = 1;
 	private static final int POSICAO_FZ = 2;
 	private static final int POSICAO_PAIS = 3;
-	/* Baumuster é composto por duas posições no array.
-	   primeira posição contendo a letra "D"*/
-	private static final int POSICAO_LETRA_BAUMUSTER = 4;
-	/* a segunda com o número. Isto porque no campo da lista no PRM estão separadas dessa maneira*/
-	private static final int POSICAO_NUMERO_BAUMUSTER = 5;
-	private static final int POSICAO_SERIE = 7;
+	private static final int POSICAO_SERIE = 5;
 
 	/**
 	 * Inicializa cada atributo através de strings extraídas de um array gerado a partir da string com as informações da cabina.
@@ -40,21 +36,22 @@ public class GeradorDeCabina {
 	 * @param linha string do arquivo de lista do PRM com os dados da cabina.
 	 * @return objeto Cabina.
 	 */
+	//TODO Tratar possíveis exceções
+	//TODO Criar validador de lista
 	//TODO verificar se no PRM as cabinas "compactas" são exibidas com esta informação e através dela contemplar este caso no app
 	//TODO refatorar para que o método não tenha que receber o contexto
-	public Cabina gerarCabina(String linha, Context contexto) {
+	public static Cabina gerarCabina(String linha, Context contexto) {
 		Cabina cabina = new Cabina();
-
 		/* Separa todos os campos da string pelos espaços e salva em um array*/
 		String[] linhaDividida = linha.split(ESPACO);
 
-		cabina.setSequencia(linhaDividida[POSICAO_SEQUENCIA]);
+		cabina.setSequencia(Integer.parseInt(linhaDividida[POSICAO_SEQUENCIA]));
 		cabina.setNp(linhaDividida[POSICAO_NP]);
 		cabina.setFz(linhaDividida[POSICAO_FZ]);
 
 		String pais = linhaDividida[POSICAO_PAIS];
 		PaisDAO paisDAO = new PaisDAO(contexto);
-		cabina.setPais(paisDAO.bucaPais(pais));
+		cabina.setPais(paisDAO.buscaPais(pais));
 		paisDAO.close();
 
 		String serie = linhaDividida[POSICAO_SERIE];
@@ -62,20 +59,17 @@ public class GeradorDeCabina {
 		cabina.setSerie(serieDAO.buscaSerie(serie));
 		serieDAO.close();
 
-		String codigoBaumuster = linhaDividida[POSICAO_LETRA_BAUMUSTER].concat(ESPACO)
-																	   .concat(linhaDividida[POSICAO_NUMERO_BAUMUSTER]);
 		BaumusterDAO baumusterDAO = new BaumusterDAO(contexto);
-		cabina.getSerie().setBaumuster(baumusterDAO.buscaBaumuster(codigoBaumuster));
+		int idBaumuster = cabina.getSerie().getBaumuster().getId();
+		cabina.getSerie().setBaumuster(baumusterDAO.buscaBaumuster(idBaumuster));
 		baumusterDAO.close();
 
 		List<Code> codes = new ArrayList<>();
-		/* Busca os codes a partir da ultima referência conseguida que no caso é POSICAO_NUMERO_BAUMUSTER */
-		for (int contador = POSICAO_NUMERO_BAUMUSTER; contador < linhaDividida.length; contador++) {
-			if (linhaDividida[contador].startsWith(CARACTER_INICIAL_CODE)) {
-				Code code = new Code();
-				code.setCodigo(linhaDividida[contador]);
-				codes.add(code);
-			}
+		CodeDAO codeDAO = new CodeDAO(contexto);
+		/* Busca os codes a partir da ultima referência conseguida que no caso é POSICAO_SERIE */
+		for (int contador = POSICAO_SERIE; contador < linhaDividida.length; contador++) {
+			if (linhaDividida[contador].startsWith(CARACTER_INICIAL_CODE))
+				codes.add(codeDAO.buscaCode(linhaDividida[contador]));
 		}
 		cabina.setCodes(codes);
 		return cabina;
