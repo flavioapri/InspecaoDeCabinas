@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(AndroidJUnit4.class)
 public class CabinaHelperTest {
-	//private static final String DADOS = "83985 40.244739/3 579007 BRA D 958.880 AXOR 2644 6X4 E5 INDD5 INF04 INHK1 INFL4";
+	
 	private Context contexto = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
 	@Test
