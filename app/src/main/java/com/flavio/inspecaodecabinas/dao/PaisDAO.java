@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.flavio.inspecaodecabinas.excecao.ArgumentoNaoEncontradoException;
 import com.flavio.inspecaodecabinas.modelo.Pais;
 
 /**
@@ -41,11 +42,13 @@ public class PaisDAO extends GenericoDAO {
 	 * @param id id do pais
 	 * @return <b>Pais</b> com seus devidos campos preenchidos
 	 */
-	public Pais buscaPais(int id) {
+	public Pais buscaPais(int id) throws ArgumentoNaoEncontradoException {
 		Pais pais = new Pais();
 		String pesquisa = "SELECT * FROM pais WHERE id = " + id;
 		SQLiteDatabase db = getReadableDatabase();
 		Cursor c = db.rawQuery(pesquisa, null);
+		if (c.getCount() == 0)
+			throw new ArgumentoNaoEncontradoException();
 		c.moveToNext();
 		pais.setId(c.getInt(c.getColumnIndex("id")));
 		pais.setCodigo(c.getString(c.getColumnIndex("codigo")));

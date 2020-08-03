@@ -1,7 +1,7 @@
 package com.flavio.inspecaodecabinas.excecao;
 
 /**
- * Criado por...//TODO Documentar
+ * A string com as informações da cabina não possuem a quantidade mínima de 4 para ter integridade.
  *
  * @author Flávio Aparecido Ribeiro
  * @version 1.0

@@ -1,5 +1,7 @@
 package com.flavio.inspecaodecabinas.logica;
 
+import com.flavio.inspecaodecabinas.constantes.Formatos;
+import com.flavio.inspecaodecabinas.constantes.Posicoes;
 import com.flavio.inspecaodecabinas.excecao.FormatoInvalidoException;
 import com.flavio.inspecaodecabinas.excecao.InformacoesInsuficientesException;
 import com.flavio.inspecaodecabinas.excecao.InspecaoCabinasException;
@@ -19,19 +21,19 @@ public class ValidadorDeLista {
 	 * @return array com as informações da cabina
 	 */
 	public static String[] validar(String informacoes) {
-		String[] informacoesSeparadas = informacoes.split(Constantes.ESPACO);
+		String[] informacoesSeparadas = informacoes.split(Formatos.ESPACO);
 		int qtdInformacoes = informacoesSeparadas.length;
 		try {
 			validarArrayInformacoes(qtdInformacoes);
-			validarInformacao(informacoesSeparadas[Constantes.POSICAO_SEQUENCIA], Constantes.FORMATO_CAMPO_SEQUENCIA);
-			validarInformacao(informacoesSeparadas[Constantes.POSICAO_NP], Constantes.FORMATO_CAMPO_NP);
-			validarInformacao(informacoesSeparadas[Constantes.POSICAO_FZ], Constantes.FORMATO_CAMPO_FZ);
-			validarInformacao(informacoesSeparadas[Constantes.POSICAO_PAIS], Constantes.FORMATO_CAMPO_PAIS);
-			validarInformacao(informacoesSeparadas[Constantes.POSICAO_SERIE], Constantes.FORMATO_CAMPO_SERIE);
+			validarInformacao(informacoesSeparadas[Posicoes.SEQUENCIA], Formatos.SEQUENCIA);
+			validarInformacao(informacoesSeparadas[Posicoes.NP], Formatos.NP);
+			validarInformacao(informacoesSeparadas[Posicoes.FZ], Formatos.FZ);
+			validarInformacao(informacoesSeparadas[Posicoes.PAIS], Formatos.PAIS);
+			validarInformacao(informacoesSeparadas[Posicoes.SERIE], Formatos.SERIE);
 
-			for (int contador = Constantes.POSICAO_SERIE; contador < informacoesSeparadas.length; contador++) {
-				if (informacoesSeparadas[contador].startsWith(Constantes.CARACTER_INICIAL_CODE))
-					validarInformacao(informacoesSeparadas[contador], Constantes.FORMATO_CAMPO_CODE);
+			for (int contador = Posicoes.SERIE; contador < informacoesSeparadas.length; contador++) {
+				if (informacoesSeparadas[contador].startsWith(Formatos.CARACTER_INICIAL_CODE))
+					validarInformacao(informacoesSeparadas[contador], Formatos.CODE);
 			}
 		} catch (InspecaoCabinasException ie) {
 			System.err.println(ie.getMessage());
@@ -48,7 +50,7 @@ public class ValidadorDeLista {
 	 * @throws InformacoesInsuficientesException caso as informações não sejam suficientes
 	 */
 	private static void validarArrayInformacoes(int qtdInformacoes) throws InformacoesInsuficientesException {
-		if (qtdInformacoes < Constantes.QTD_MINIMA_INFORMACOES)
+		if (qtdInformacoes < Formatos.QTD_MINIMA_INFORMACOES)
 			throw new InformacoesInsuficientesException();
 	}
 

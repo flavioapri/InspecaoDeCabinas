@@ -1,9 +1,7 @@
 package com.flavio.inspecaodecabinas.excecao;
 
-import com.flavio.inspecaodecabinas.excecao.InspecaoCabinasException;
-
 /**
- * Criado por...//TODO documentar
+ * A informação não atende o formato especificado.
  *
  * @author Flávio Aparecido Ribeiro
  * @version 1.0

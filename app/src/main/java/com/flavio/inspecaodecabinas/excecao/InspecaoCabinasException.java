@@ -1,7 +1,7 @@
 package com.flavio.inspecaodecabinas.excecao;
 
 /**
- * //TODO Documentar
+ * Exceções especificas da aplicação.
  *
  * @author Flávio Aparecido Ribeiro
  * @version 1.0

@@ -38,6 +38,7 @@ public class LeitorDeLista {
 		} catch (IOException e) {
 			System.err.println("Erro ao ler arquivo. Certifique-se de que o arquivo é do tipo texto (.txt) e possuí conteúdo.");
 			e.printStackTrace();
+			return null;
 		}
 		return lista;
 	}

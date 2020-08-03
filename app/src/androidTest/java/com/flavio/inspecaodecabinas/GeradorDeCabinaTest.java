@@ -17,13 +17,13 @@ import static org.junit.Assert.assertEquals;
 @RunWith(AndroidJUnit4.class)
 public class GeradorDeCabinaTest {
 	private Cabina cabina;
-	private Context contexto;
 
 	@Before
 	public void antes() {
-		contexto = InstrumentationRegistry.getInstrumentation().getTargetContext();
+		Context contexto = InstrumentationRegistry.getInstrumentation().getTargetContext();
 		String linha = "82585 40.244739/3 579007 BRA AXOR 2644 6X4 E5 INDD5 INF04 INHK1 INFL4";
-		cabina = GeradorDeCabina.gerarCabina(linha, contexto);
+		String[] informacoesCabina = linha.split(linha);
+		cabina = GeradorDeCabina.gerarCabina(informacoesCabina, contexto);
 	}
 
 	@Test
